@@ -1,0 +1,8 @@
+[
+    { "label": "01-Inpatient", "selected": false, "bindModel": "01" },
+    { "label": "02-Long", "selected": false, "bindModel": "02" },
+    { "label": "03-Outpatient", "selected": false, "bindModel": "03" },
+    { "label": "04-Physician", "selected": false, "bindModel": "04" },
+    { "label": "05-Rehabilitation", "selected": false, "bindModel": "05" }
+    
+  ]

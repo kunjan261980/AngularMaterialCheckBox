@@ -1,0 +1,31 @@
+<h1>Check Boxes NGMODEL</h1>
+<div *ngFor="let checkBox of checkBoxes">
+  <mat-checkbox value="{{checkBox.bindModel}}" [(ngModel)]="checkBox.selected"
+    (ngModelChange)="onCheckChange($event, checkBox.bindModel)">{{checkBox.label}}</mat-checkbox>
+ 
+</div>
+<button (click)="resetCheckBox()">Reset Check Box</button>
+<div *ngFor="let checkBox of checkBoxes">
+<input type="checkbox" class="custom-control-input" id="{{checkBox.label}}" name="{{checkBox.label}}"
+  value="{{checkBox.bindModel}}" [(ngModel)]="checkBox.selected" (ngModelChange)="onCheckChange($event, checkBox.bindModel)">
+<label class="custom-control-label line-h25" >{{checkBox.label}}</label>
+</div> <button (click)="resetCheckBox()">Reset Check Box</button>
+
+<form [formGroup] = "form">
+<h1>Check Boxes Reactive</h1>
+<div *ngFor="let checkBox of checkBoxes; let i = index">
+  <mat-checkbox value="{{checkBox.bindModel}}" formControlName = 'checkBoxReactive{{i}}'
+    (change)="onReactiveCheckChange($event, checkBox.bindModel)">{{checkBox.label}}</mat-checkbox>
+ 
+</div>
+<button (click)="resetReactiveCheckBox()">Reset Reactive Check Box  Element</button>
+<hr>
+
+<div *ngFor="let checkBox of checkBoxes; let i = index">
+  <input type="checkbox" class="custom-control-input" id="{{checkBox.label}}" name="{{checkBox.label}}"
+    value="{{checkBox.bindModel}}" formControlName = 'checkBox_Reactive{{i}}' (change)="onReactive_CheckChange($event, checkBox.bindModel)">
+  <label class="custom-control-label line-h25" >{{checkBox.label}}</label>
+  </div>
+  <button (click)="resetReactiveHTMLCheckBox()">Reset Reactive Check Box html Element</button>
+  
+</form>
